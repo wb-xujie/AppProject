@@ -10,6 +10,8 @@ import time
 import allure
 import pytest
 
+from UI_Framework.Base import logger
+
 
 @pytest.fixture()
 def record():
@@ -20,4 +22,9 @@ def record():
     # p = os.popen(cmd)
     yield
     os.kill(p.pid, signal.CTRL_C_EVENT)
-    allure.attach.file(file_path, name=file_time, attachment_type=allure.attachment_type.MP4)
+    with open(file_path,'rb') as f:
+        vedio =f.read()
+        print(vedio)
+    # logger.LoggerToFile("record:"+str(p.pid))
+    # allure.attach.file(file_path, name=file_time, attachment_type=allure.attachment_type.MP4)
+    allure.attach(vedio,name=file_time,attachment_type=allure.attachment_type.MP4)

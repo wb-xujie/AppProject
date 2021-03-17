@@ -76,7 +76,9 @@ class BaseClass:
     def screenshot(self):
         sleep(1)
         f_time = time.strftime("%Y-%m-%d-%H-%M-%S")
-        filename = f'../Result_screen/{f_time}.png'
-        self.driver.get_screenshot_as_file(filename)
-        allure.attach.file(f"../Result_screen/{f_time}.png",name=filename,attachment_type=allure.attachment_type.PNG)
+        file_name = f_time+".png"
+        file_path = f'../Result_screen/{f_time}.png'
+
+        self.driver.get_screenshot_as_file(file_path)
+        allure.attach.file(file_path,name=file_name,attachment_type=allure.attachment_type.PNG)
 
