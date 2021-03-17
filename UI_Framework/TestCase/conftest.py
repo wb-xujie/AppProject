@@ -22,7 +22,7 @@ def record():
     # p = os.popen(cmd)
     yield
     os.kill(p.pid, signal.CTRL_C_EVENT)
-    time.sleep(5)
+    time.sleep(1)
     # with open(file_path,'rb') as f:
     #     vedio =f.read()
     #     print(vedio)
