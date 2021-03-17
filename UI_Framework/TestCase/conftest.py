@@ -22,9 +22,10 @@ def record():
     # p = os.popen(cmd)
     yield
     os.kill(p.pid, signal.CTRL_C_EVENT)
-    with open(file_path,'rb') as f:
-        vedio =f.read()
-        print(vedio)
+    time.sleep(5)
+    # with open(file_path,'rb') as f:
+    #     vedio =f.read()
+    #     print(vedio)
     # logger.LoggerToFile("record:"+str(p.pid))
-    # allure.attach.file(file_path, name=file_time, attachment_type=allure.attachment_type.MP4)
-    allure.attach(vedio,name=file_time,attachment_type=allure.attachment_type.MP4)
+    allure.attach.file(file_path, name=file_time, attachment_type=allure.attachment_type.MP4)
+    # allure.attach(vedio,name=file_time,attachment_type=allure.attachment_type.MP4)
