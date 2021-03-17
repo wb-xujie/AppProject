@@ -1,0 +1,5 @@
+goto_search:
+  - action: find_click
+    locator: xpath
+    value: //*[@resource-id = 'com.xueqiu.android:id/action_search']
+    #key值打不打引号都可以

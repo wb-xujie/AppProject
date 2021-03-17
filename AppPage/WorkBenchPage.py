@@ -11,4 +11,4 @@ class WorkBenchPage(BaseClass):
 
     # 打卡功能
     def daka(self):
-        pass
+        self.swipe_Find(value="//*[@text = '打卡']").click()

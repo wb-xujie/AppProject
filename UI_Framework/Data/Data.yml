@@ -1,0 +1,9 @@
+desired_caps:
+   platformName: "android"
+   deviceName: "127.0.0.1:7555"
+   appPackage: "com.xueqiu.android"
+   appActivity: ".common.MainActivity"
+   noReset: "true"
+
+localhost:
+  host: "http://localhost:4723/wd/hub"

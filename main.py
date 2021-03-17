@@ -8,3 +8,10 @@
 # desired_caps['appActivity'] = 'com.android.settings.Settings'
 # driver = webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
 # driver.quit()
+
+import time
+
+print(time.time())
+print(time.thread_time())
+print(time.localtime())
+print(time.asctime())

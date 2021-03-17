@@ -11,8 +11,9 @@ APP初始化
 """
 import yaml
 from appium import webdriver
-from AppPage.MainPage import MainPage
-from Baseconfig.BaseClass import BaseClass
+
+from UI_Framework.Base.BaseClass import BaseClass
+from UI_Framework.Page.MainPage import MainPage
 
 
 class BaseApp(BaseClass):
@@ -25,22 +26,9 @@ class BaseApp(BaseClass):
                 data = yaml.safe_load(file)
                 self.desired_caps = data["desired_caps"]
                 self.host = data["localhost"]["host"]
-
-            # self.desired_caps = {
-            #         "platformName": "android", #客户端平台
-            #         "deviceName": "127.0.0.1:7555", #客户端的name
-            #         "appPackage": "com.tencent.wework",
-            #         "appActivity": ".launch.WwMainActivity",
-            #         "dontStopAppOnReset": "True",  #不需要停止APP
-            #         "noReset": "True",#不重置APP
-            #         "skipServerInstallation": "true", #跳过设备初始化
-            #         # "skipDeviceInitialization":"true", #运行前不停止APP
-            #          }
             # # 客户端和appium服务器连接代码
             self.driver = webdriver.Remote(f"{self.host}", self.desired_caps)
-            # self.driver = webdriver.Remote("http://localhost:4723/wd/hub", self.desired_caps)
-            # self.driver = webdriver.Remote('http://localhost:4723/wd/hub', self.desired_caps)
-            self.driver.implicitly_wait(3)
+            self.driver.implicitly_wait(5)
             return self
 
         else:

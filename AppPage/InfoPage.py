@@ -19,6 +19,7 @@ class InfoPage(BaseClass):
 
     def Check_OK(self):
         count = len(self.finds(*(MobileBy.XPATH,"//*[@text = '无搜索结果']")))
+        print(count)
         if count ==1:
             print("删除成功")
 
