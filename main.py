@@ -1,17 +1,31 @@
+# from time import sleep
+#
 # from appium import webdriver
+# from appium.webdriver.extensions.android.gsm import GsmCallActions
 #
 # desired_caps = {}
 # desired_caps['platformName'] = 'Android'
-# desired_caps['platformVersion'] = '6.0.1'
-# desired_caps['deviceName'] = '0123456789ABCDEF'
-# desired_caps['appPackage'] = 'com.android.settings'
-# desired_caps['appActivity'] = 'com.android.settings.Settings'
+# desired_caps['platformVersion'] = '9.0'
+# desired_caps['deviceName'] = 'CKNA432248HDA0047'
+# desired_caps['appPackage'] = 'com.autonavi.amapauto'
+# desired_caps['appActivity'] = '.MainMapActivity'
 # driver = webdriver.Remote('http://localhost:4723/wd/hub',desired_caps)
-# driver.quit()
 
-import time
 
-print(time.time())
-print(time.thread_time())
-print(time.localtime())
-print(time.asctime())
+def demo(fun):
+    def run(*args,**kwargs):
+        print('这是一个装饰器')
+        fun(*args,**kwargs)
+        print("结束了")
+    return run
+
+
+
+
+
+@demo
+def a(a):
+    print(f'我是{a}')
+
+def test():
+    a('张三')

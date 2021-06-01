@@ -1,8 +1,6 @@
 from appium.webdriver.common.mobileby import MobileBy
 
-from UI_Framework.Base import logger
-
-
+# 装饰器，通过@加装饰器名进行调用
 def Black_list(fun):
     def run(*args, **kwargs):
         black_list = ["//*[@resource-id = 'com.xueqiu.android:id/iv_close']"]

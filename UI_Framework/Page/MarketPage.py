@@ -1,5 +1,4 @@
 # _*_ coding:utf-8 _*_
-from appium.webdriver.common.mobileby import MobileBy
 
 from UI_Framework.Base.BaseClass import BaseClass
 from UI_Framework.Page.SearchPage import SearchPage

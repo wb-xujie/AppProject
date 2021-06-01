@@ -20,12 +20,12 @@ class BaseClass:
     #封装find_element方法
     @Black_list
     def find(self, locator, value):
-        logger.LoggerToFile("find:"+ "locator:"+locator + "  value:"+value)
+        logger.LoggerToFile("find:" + "locator:" + locator + "  value:" + value)
         return self.driver.find_element(locator,value)
 
 
     def finds(self,locator, value):
-        logger.LoggerToFile("finds:" + "locator:"+locator + "  value:"+value)
+        logger.LoggerToFile("finds:" + "locator:" + locator + "  value:" + value)
         return self.driver.find_elements(locator,value)
 
     def find_click(self,locator,value):

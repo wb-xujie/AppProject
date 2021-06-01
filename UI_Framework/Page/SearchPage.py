@@ -1,5 +1,3 @@
-from appium.webdriver.common.mobileby import MobileBy
-
 from UI_Framework.Base.BaseClass import BaseClass
 
 

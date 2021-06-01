@@ -1,16 +1,13 @@
 # coding=utf-8
 # author=xujie
 # datetime = 2021/3/16
-import json
 import os
 import signal
 import subprocess
 import time
-
 import allure
 import pytest
 
-from UI_Framework.Base import logger
 
 
 @pytest.fixture()
@@ -19,13 +16,9 @@ def record():
     file_path = "../Result_screen/" + file_time + ".mp4"
     cmd = "scrcpy -r ../Result_screen/" + file_time + ".mp4"
     p = subprocess.Popen(cmd, shell=True)
-    # p = os.popen(cmd)
     yield
-    os.kill(p.pid, signal.CTRL_C_EVENT)
-    time.sleep(1)
-    # with open(file_path,'rb') as f:
-    #     vedio =f.read()
-    #     print(vedio)
-    # logger.LoggerToFile("record:"+str(p.pid))
-    allure.attach.file(file_path, name=file_time, attachment_type=allure.attachment_type.MP4)
-    # allure.attach(vedio,name=file_time,attachment_type=allure.attachment_type.MP4)
+    # 执行kill操作
+    kill_pid_cmd = "taskkill /IM scrcpy.exe"
+    os.system(kill_pid_cmd)
+    time.sleep(2)
+    allure.attach.file(file_path,name="这是一个视频",attachment_type=allure.attachment_type.MP4)
